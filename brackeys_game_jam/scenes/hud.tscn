@@ -1,3 +1,62 @@
-[gd_scene format=3 uid="uid://dhew1dxcdngr7"]
+[gd_scene load_steps=6 format=3 uid="uid://dhew1dxcdngr7"]
+
+[ext_resource type="Texture2D" uid="uid://n52orq42d1q1" path="res://assets/beating_heart_sprite_sheet.png" id="1_l6ar7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ocixf"]
+atlas = ExtResource("1_l6ar7")
+region = Rect2(0, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ujoe2"]
+atlas = ExtResource("1_l6ar7")
+region = Rect2(200, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5o2m1"]
+atlas = ExtResource("1_l6ar7")
+region = Rect2(400, 0, 200, 200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fc61s"]
+animations = [{
+"frames": [{
+"duration": 4.0,
+"texture": SubResource("AtlasTexture_ocixf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ujoe2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5o2m1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="hud" type="CanvasLayer"]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 4.0
+offset_top = -305.0
+offset_right = 604.0
+offset_bottom = -130.0
+grow_vertical = 2
+
+[node name="heart1" type="AnimatedSprite2D" parent="HBoxContainer"]
+position = Vector2(104, 73)
+sprite_frames = SubResource("SpriteFrames_fc61s")
+autoplay = "default"
+frame_progress = 0.43104
+
+[node name="heart2" type="AnimatedSprite2D" parent="HBoxContainer"]
+position = Vector2(302, 71)
+sprite_frames = SubResource("SpriteFrames_fc61s")
+autoplay = "default"
+frame_progress = 0.729225
+
+[node name="heart3" type="AnimatedSprite2D" parent="HBoxContainer"]
+position = Vector2(492, 69)
+sprite_frames = SubResource("SpriteFrames_fc61s")
+autoplay = "default"
+frame_progress = 0.253171

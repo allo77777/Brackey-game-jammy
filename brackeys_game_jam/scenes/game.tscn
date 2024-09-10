@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://q7hs8vmm8mg1"]
+[gd_scene load_steps=16 format=4 uid="uid://q7hs8vmm8mg1"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_b7uvj"]
 [ext_resource type="PackedScene" uid="uid://dj63f22jbpg1d" path="res://scenes/player.tscn" id="2_li5gt"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://d0ogqq0krnl53" path="res://assets/Asset Packs/Oak Woods Enviremental Pack/background/background_layer_1.png" id="7_twnx8"]
 [ext_resource type="Texture2D" uid="uid://ibu0mogmaer" path="res://assets/Asset Packs/Oak Woods Enviremental Pack/background/background_layer_2.png" id="8_cbw2h"]
 [ext_resource type="Texture2D" uid="uid://bsqelpeu8b5vu" path="res://assets/Asset Packs/Oak Woods Enviremental Pack/background/background_layer_3.png" id="9_lawbd"]
+[ext_resource type="PackedScene" uid="uid://cgog0khyga5jc" path="res://scenes/menu_scenes/main_menu.tscn" id="10_v2cfh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qa3d8"]
 texture = ExtResource("2_lp0xe")
@@ -683,3 +684,7 @@ repeat_times = 5
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Layer3"]
 texture_filter = 1
 texture = ExtResource("9_lawbd")
+
+[node name="main_menu" parent="." instance=ExtResource("10_v2cfh")]
+offset_top = 600.0
+offset_bottom = 600.0

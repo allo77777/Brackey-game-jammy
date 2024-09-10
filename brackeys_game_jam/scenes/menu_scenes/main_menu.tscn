@@ -1,0 +1,93 @@
+[gd_scene load_steps=7 format=3 uid="uid://cgog0khyga5jc"]
+
+[ext_resource type="Texture2D" uid="uid://pb80txk3ejbn" path="res://assets/UI/button_green_purple.png" id="1_ht1dk"]
+[ext_resource type="Script" path="res://scripts/menu_scripts/main_menu.gd" id="1_vctfv"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uh486"]
+texture = ExtResource("1_ht1dk")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rp010"]
+texture = ExtResource("1_ht1dk")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uurp5"]
+bg_color = Color(0.621441, 0.530818, 0.890534, 0.443137)
+shadow_color = Color(0.145098, 0.152941, 0.6, 0.6)
+shadow_size = 10
+
+[sub_resource type="Theme" id="Theme_18mms"]
+Button/styles/hover = SubResource("StyleBoxTexture_uh486")
+Button/styles/normal = SubResource("StyleBoxTexture_rp010")
+Button/styles/pressed = SubResource("StyleBoxFlat_uurp5")
+
+[node name="main_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vctfv")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.446777, 0.446777, 0.446777, 1)
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 0
+anchor_left = 0.150174
+anchor_top = 0.0756173
+anchor_right = 0.360243
+anchor_bottom = 0.160494
+text = "Placeholder background"
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.736979
+anchor_top = 0.131173
+anchor_right = 0.927083
+anchor_bottom = 0.714506
+theme_override_constants/separation = 20
+metadata/_edit_use_anchors_ = true
+
+[node name="play_button" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_18mms")
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "PLAY"
+
+[node name="credits_button" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_18mms")
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "CREDITS
+"
+
+[node name="quit_button" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_18mms")
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "QUIT
+"
+
+[connection signal="pressed" from="VBoxContainer/play_button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/credits_button" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/quit_button" to="." method="_on_quit_button_pressed"]

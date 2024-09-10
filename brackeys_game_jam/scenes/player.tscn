@@ -1,0 +1,215 @@
+[gd_scene load_steps=26 format=3 uid="uid://dj63f22jbpg1d"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_twxap"]
+[ext_resource type="Texture2D" uid="uid://c5sgoxmkrts3i" path="res://assets/Asset Packs/Pixel Adventurer Pack/adventurer-Sheet.png" id="2_2qjmw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h3ngg"]
+atlas = ExtResource("2_2qjmw")
+region = Rect2(0, 0, 50, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bmfvo"]
+atlas = ExtResource("2_2qjmw")
+region = Rect2(50, 0, 50, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_35hgm"]
+atlas = ExtResource("2_2qjmw")
+region = Rect2(100, 0, 50, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2koh5"]
+atlas = ExtResource("2_2qjmw")
+region = Rect2(150, 0, 50, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tqplg"]
+atlas = ExtResource("2_2qjmw")
+region = Rect2(50, 74, 50, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ikyfk"]
+atlas = ExtResource("2_2qjmw")
+region = Rect2(100, 74, 50, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1qfsp"]
+atlas = ExtResource("2_2qjmw")
+region = Rect2(150, 74, 50, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wd5tw"]
+atlas = ExtResource("2_2qjmw")
+region = Rect2(200, 74, 50, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_187r0"]
+atlas = ExtResource("2_2qjmw")
+region = Rect2(250, 74, 50, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1xcpb"]
+atlas = ExtResource("2_2qjmw")
+region = Rect2(300, 74, 50, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3lsf5"]
+atlas = ExtResource("2_2qjmw")
+region = Rect2(0, 111, 50, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rqqhe"]
+atlas = ExtResource("2_2qjmw")
+region = Rect2(50, 111, 50, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cgjet"]
+atlas = ExtResource("2_2qjmw")
+region = Rect2(100, 111, 50, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0jgsl"]
+atlas = ExtResource("2_2qjmw")
+region = Rect2(50, 37, 50, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_34bq1"]
+atlas = ExtResource("2_2qjmw")
+region = Rect2(100, 37, 50, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ame25"]
+atlas = ExtResource("2_2qjmw")
+region = Rect2(150, 37, 50, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xl11k"]
+atlas = ExtResource("2_2qjmw")
+region = Rect2(200, 37, 50, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8o4rg"]
+atlas = ExtResource("2_2qjmw")
+region = Rect2(250, 37, 50, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hf5ih"]
+atlas = ExtResource("2_2qjmw")
+region = Rect2(300, 37, 50, 37)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5dqc1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h3ngg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bmfvo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_35hgm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2koh5")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tqplg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ikyfk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1qfsp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wd5tw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_187r0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1xcpb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3lsf5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rqqhe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cgjet")
+}],
+"loop": false,
+"name": &"Jump",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0jgsl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_34bq1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ame25")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xl11k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8o4rg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hf5ih")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n1deg"]
+size = Vector2(9, 31)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hqjrc"]
+radius = 20.0998
+
+[sub_resource type="LabelSettings" id="LabelSettings_tpymy"]
+font_size = 7
+
+[node name="Player" type="CharacterBody2D"]
+z_index = 4
+script = ExtResource("1_twxap")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_5dqc1")
+animation = &"Jump"
+autoplay = "Idle"
+frame = 8
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 2.5)
+shape = SubResource("RectangleShape2D_n1deg")
+
+[node name="Interactions" type="Node2D" parent="."]
+
+[node name="InteractionArea" type="Area2D" parent="Interactions"]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/InteractionArea"]
+shape = SubResource("CircleShape2D_hqjrc")
+
+[node name="InteractLabel" type="Label" parent="Interactions/InteractionArea"]
+z_index = 5
+texture_filter = 1
+offset_left = -40.0
+offset_top = -30.0
+offset_right = 40.0
+offset_bottom = -14.0
+size_flags_horizontal = 4
+label_settings = SubResource("LabelSettings_tpymy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timers" type="Node" parent="."]
+
+[node name="JumpBuffering" type="Timer" parent="Timers"]
+wait_time = 0.4
+one_shot = true
+
+[node name="CoyoteTime" type="Timer" parent="Timers"]
+wait_time = 0.4
+one_shot = true
+
+[connection signal="area_entered" from="Interactions/InteractionArea" to="." method="_on_interaction_area_area_entered"]
+[connection signal="area_exited" from="Interactions/InteractionArea" to="." method="_on_interaction_area_area_exited"]

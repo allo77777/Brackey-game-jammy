@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsukmx3bc8iyk"]
+
+[ext_resource type="Texture2D" uid="uid://bm22o74g3tacq" path="res://assets/Asset Packs/Oak Woods Enviremental Pack/decorations/lamp.png" id="1_goacb"]
+
+[sub_resource type="Gradient" id="Gradient_8301p"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0d4q0"]
+gradient = SubResource("Gradient_8301p")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.90367, 0.114679)
+
+[node name="Lamp" type="Sprite2D"]
+texture_filter = 1
+texture = ExtResource("1_goacb")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-6, -6)
+scale = Vector2(1.29688, 1.21875)
+texture = SubResource("GradientTexture2D_0d4q0")

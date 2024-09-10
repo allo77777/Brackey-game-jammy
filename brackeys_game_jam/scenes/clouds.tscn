@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://b8emsks4sl0mg"]
+
+[ext_resource type="Script" path="res://scripts/cloud.gd" id="1_wbogw"]
+[ext_resource type="Texture2D" uid="uid://dmtcp1hkhpwjn" path="res://assets/Asset Packs/Cloud Pixel Art Asset Pack/Clouds_gray/Shape5/cloud_shape5_5.png" id="2_5ktyw"]
+[ext_resource type="Texture2D" uid="uid://77dqnrlkjvx6" path="res://assets/Asset Packs/Cloud Pixel Art Asset Pack/Clouds_gray/Shape3/cloud_shape3_4.png" id="3_7i1xn"]
+[ext_resource type="Texture2D" uid="uid://coo3lir0eii46" path="res://assets/Asset Packs/Cloud Pixel Art Asset Pack/Clouds_gray/Shape2/cloud_shape2_4.png" id="4_44l8w"]
+[ext_resource type="Texture2D" uid="uid://ddhacd4stx3e6" path="res://assets/Asset Packs/Cloud Pixel Art Asset Pack/Clouds_gray/Shape2/cloud_shape2_2.png" id="5_yf6eb"]
+
+[node name="Clouds" type="Node2D"]
+z_index = 8
+script = ExtResource("1_wbogw")
+
+[node name="Cloud1" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+texture = ExtResource("2_5ktyw")
+
+[node name="Cloud2" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+texture = ExtResource("3_7i1xn")
+
+[node name="Cloud3" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+texture = ExtResource("4_44l8w")
+
+[node name="Cloud4" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+texture = ExtResource("5_yf6eb")

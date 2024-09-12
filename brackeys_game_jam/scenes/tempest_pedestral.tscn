@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://hj2cuxu8yojd"]
+[gd_scene load_steps=12 format=3 uid="uid://hj2cuxu8yojd"]
 
 [ext_resource type="Texture2D" uid="uid://cuiw0ng3ut56c" path="res://assets/tempest_pedestral.png" id="1_b71ph"]
 [ext_resource type="PackedScene" uid="uid://bqs1lj6pn18bi" path="res://scenes/interaction_area.tscn" id="1_d2kn0"]
@@ -43,6 +43,15 @@ _data = {
 "RESET": SubResource("Animation_a5t6t")
 }
 
+[sub_resource type="Gradient" id="Gradient_vt00s"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_al8jh"]
+gradient = SubResource("Gradient_vt00s")
+fill = 1
+fill_from = Vector2(0.5, 0.495413)
+fill_to = Vector2(0.885321, 0.155963)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f3p8c"]
 size = Vector2(16, 16)
 
@@ -64,10 +73,8 @@ libraries = {
 "": SubResource("AnimationLibrary_yttik")
 }
 
-[node name="PointLight2D" type="PointLight2D" parent="Artifact"]
-shadow_enabled = true
-texture = ExtResource("1_q3gl3")
-texture_scale = 1.3
+[node name="PointLight2D2" type="PointLight2D" parent="Artifact"]
+texture = SubResource("GradientTexture2D_al8jh")
 
 [node name="Pedestral" type="Sprite2D" parent="."]
 texture_filter = 1

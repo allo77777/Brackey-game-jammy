@@ -204,11 +204,11 @@ vertical_alignment = 1
 [node name="Timers" type="Node" parent="."]
 
 [node name="JumpBuffering" type="Timer" parent="Timers"]
-wait_time = 0.4
+wait_time = 0.2
 one_shot = true
 
 [node name="CoyoteTime" type="Timer" parent="Timers"]
-wait_time = 0.4
+wait_time = 0.2
 one_shot = true
 
 [connection signal="area_entered" from="Interactions/InteractionArea" to="." method="_on_interaction_area_area_entered"]

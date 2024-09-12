@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bl25678akqn2k"]
+
+[ext_resource type="Texture2D" uid="uid://trrnuewhkb4" path="res://assets/Asset Packs/Oak Woods Enviremental Pack/decorations/rock_3.png" id="1_7f1mq"]
+
+[node name="LargeRock" type="Sprite2D"]
+texture_filter = 1
+texture = ExtResource("1_7f1mq")

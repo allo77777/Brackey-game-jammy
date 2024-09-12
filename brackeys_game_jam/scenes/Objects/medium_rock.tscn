@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://csim3t41u1vft"]
+
+[ext_resource type="Texture2D" uid="uid://dvj4k3kqkaass" path="res://assets/Asset Packs/Oak Woods Enviremental Pack/decorations/rock_2.png" id="1_4t04p"]
+
+[node name="MediumRock" type="Sprite2D"]
+texture_filter = 1
+position = Vector2(-79, -6)
+texture = ExtResource("1_4t04p")

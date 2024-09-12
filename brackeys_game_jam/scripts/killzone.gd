@@ -1,0 +1,14 @@
+extends Area2D
+
+@export_range(0.1, 5) var death_time: float = 0.1
+
+@onready var timer: Timer = $Timer
+
+func _ready() -> void:
+	timer.wait_time = death_time
+
+func _on_body_entered(body: Node2D) -> void:
+	timer.start()
+
+func _on_timer_timeout() -> void:
+	get_tree().reload_current_scene()

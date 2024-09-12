@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://ce5sxxm6magvs"]
+
+[ext_resource type="Texture2D" uid="uid://bech1nkng6yty" path="res://assets/Asset Packs/Oak Woods Enviremental Pack/decorations/spike.png" id="1_moo5y"]
+[ext_resource type="PackedScene" uid="uid://c0srdht8yfyjy" path="res://scenes/killzone.tscn" id="2_vlqfq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6kb75"]
+size = Vector2(14, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2lw6e"]
+size = Vector2(14, 8)
+
+[node name="Spike" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_6kb75")
+
+[node name="Killzone" parent="." instance=ExtResource("2_vlqfq")]
+position = Vector2(0, -16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(0, 12)
+shape = SubResource("RectangleShape2D_2lw6e")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -8)
+texture = ExtResource("1_moo5y")

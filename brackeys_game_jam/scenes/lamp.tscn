@@ -3,13 +3,14 @@
 [ext_resource type="Texture2D" uid="uid://bm22o74g3tacq" path="res://assets/Asset Packs/Oak Woods Enviremental Pack/decorations/lamp.png" id="1_goacb"]
 
 [sub_resource type="Gradient" id="Gradient_8301p"]
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+offsets = PackedFloat32Array(0, 0.38961, 0.551948, 0.746753, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.571658, 0.571658, 0.571658, 1, 0.422078, 0.422078, 0.422078, 1, 0.253247, 0.253247, 0.253247, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_0d4q0"]
 gradient = SubResource("Gradient_8301p")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(0.90367, 0.114679)
+fill_to = Vector2(0.908257, 0.178899)
 
 [node name="Lamp" type="Sprite2D"]
 texture_filter = 1

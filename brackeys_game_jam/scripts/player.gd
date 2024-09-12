@@ -8,12 +8,18 @@ class_name Player
 
 @export_category("References")
 @export var game: Node2D
+@export var fallen_tree: StaticBody2D
+@export var storm_fog: Sprite2D
 
 #References
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var coyote_time: Timer = $Timers/CoyoteTime
 @onready var jump_buffering: Timer = $Timers/JumpBuffering
 @onready var interact_label: Label = $Interactions/InteractionArea/InteractLabel
+@onready var calm_particles: GPUParticles2D = $CalmParticles
+@onready var storm_particles: GPUParticles2D = $StormParticles
+@onready var point_light_2d: PointLight2D = $PointLight2D
+@onready var rain: ColorRect = $"../Rain"
 
 #Variables
 var facing: int
@@ -22,8 +28,12 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity", 980)
 var prevVelocity: Vector2
 var all_interactions: Array = []
 
-func ready():
+func _ready() -> void:
 	update_interaction()
+	calm_particles.show()
+	storm_particles.hide()
+	storm_fog.hide()
+	rain.hide()
 
 func _physics_process(delta: float) -> void:	
 	
@@ -39,7 +49,6 @@ func _physics_process(delta: float) -> void:
 		
 	#Handle jump
 	if Input.is_action_just_pressed("jump"):	
-		coyote_time.stop()
 		jump_buffering.start()
 	
 		if is_on_floor():	
@@ -52,9 +61,6 @@ func _physics_process(delta: float) -> void:
 		
 	#While falling	
 	elif not is_on_floor():
-		
-		coyote_time.start()
-		
 		#Y-axis movement
 		velocity.y += gravity * delta
 		
@@ -64,6 +70,8 @@ func _physics_process(delta: float) -> void:
 		
 	#Running
 	else:
+		coyote_time.start()
+		
 		if direction:
 			#X-axis movement
 			animated_sprite_2d.play("Run")
@@ -111,6 +119,8 @@ func facing_direction():
 		
 func jump():
 	animated_sprite_2d.play("Jump")
+	coyote_time.stop()
+	
 	velocity.y = JUMP_VELOCITY
 	velocity.y = lerp(prevVelocity.y, velocity.y, 0.8)
 
@@ -138,4 +148,17 @@ func execute_interaction():
 		
 		match current_interaction:					
 			0:
-				game.storm = true
+				if !game.storm:
+					storm()
+				
+#Out Of Bounds
+#---------------------------------------------------------------#
+	
+func storm():
+	game.storm = true
+	fallen_tree.queue_free()
+	calm_particles.hide()
+	storm_particles.show()
+	storm_fog.show()
+	point_light_2d.energy = 0.5
+	rain.show()

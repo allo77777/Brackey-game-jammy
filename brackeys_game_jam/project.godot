@@ -11,12 +11,9 @@ config_version=5
 [application]
 
 config/name="storm game"
+run/main_scene="res://scenes/menu_scenes/main_menu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
-
-[display]
-
-window/size/mode=3
 
 [input]
 
@@ -53,5 +50,5 @@ interact={
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
-environment/defaults/default_clear_color=Color(0.0855394, 2.04533e-05, 1.1216e-05, 1)
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)
 viewport/hdr_2d=true

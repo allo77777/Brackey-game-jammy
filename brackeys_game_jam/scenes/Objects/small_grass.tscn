@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhfnl7hi7es48"]
+
+[ext_resource type="Texture2D" uid="uid://btvh8g15n2nit" path="res://assets/Asset Packs/Oak Woods Enviremental Pack/decorations/grass_1.png" id="1_5aeko"]
+
+[node name="SmallGrass" type="Sprite2D"]
+z_index = 5
+texture_filter = 1
+position = Vector2(-81, -1.5)
+texture = ExtResource("1_5aeko")

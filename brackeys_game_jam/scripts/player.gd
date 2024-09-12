@@ -11,6 +11,7 @@ class_name Player
 @export var fallen_tree: StaticBody2D
 @export var storm_fog: Sprite2D
 
+
 #References
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var coyote_time: Timer = $Timers/CoyoteTime
@@ -20,6 +21,8 @@ class_name Player
 @onready var storm_particles: GPUParticles2D = $StormParticles
 @onready var point_light_2d: PointLight2D = $PointLight2D
 @onready var rain: ColorRect = $"../Rain"
+#those play sounds 
+@onready var jump_sfx = $jump_sound
 
 #Variables
 var facing: int
@@ -27,6 +30,7 @@ var direction: float
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity", 980)
 var prevVelocity: Vector2
 var all_interactions: Array = []
+
 
 func _ready() -> void:
 	update_interaction()
@@ -77,6 +81,7 @@ func _physics_process(delta: float) -> void:
 			animated_sprite_2d.play("Run")
 			velocity.x = direction * SPEED
 			
+			
 		else:
 			#X-axis movement
 			animated_sprite_2d.play("Idle")
@@ -123,6 +128,7 @@ func jump():
 	
 	velocity.y = JUMP_VELOCITY
 	velocity.y = lerp(prevVelocity.y, velocity.y, 0.8)
+	jump_sfx.play()
 
 #Interaction
 #---------------------------------------------------------------#

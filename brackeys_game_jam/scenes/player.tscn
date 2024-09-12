@@ -1,7 +1,8 @@
-[gd_scene load_steps=26 format=3 uid="uid://dj63f22jbpg1d"]
+[gd_scene load_steps=27 format=3 uid="uid://dj63f22jbpg1d"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_twxap"]
 [ext_resource type="Texture2D" uid="uid://c5sgoxmkrts3i" path="res://assets/Asset Packs/Pixel Adventurer Pack/adventurer-Sheet.png" id="2_2qjmw"]
+[ext_resource type="AudioStream" uid="uid://bsuiw8if7pxgy" path="res://audio/brackey audio/jump.wav" id="4_xwqgk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h3ngg"]
 atlas = ExtResource("2_2qjmw")
@@ -170,10 +171,8 @@ script = ExtResource("1_twxap")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_5dqc1")
-animation = &"Jump"
+animation = &"Idle"
 autoplay = "Idle"
-frame = 8
-frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 2.5)
@@ -210,6 +209,10 @@ one_shot = true
 [node name="CoyoteTime" type="Timer" parent="Timers"]
 wait_time = 0.2
 one_shot = true
+
+[node name="jump_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_xwqgk")
+bus = &"sfx"
 
 [connection signal="area_entered" from="Interactions/InteractionArea" to="." method="_on_interaction_area_area_entered"]
 [connection signal="area_exited" from="Interactions/InteractionArea" to="." method="_on_interaction_area_area_exited"]

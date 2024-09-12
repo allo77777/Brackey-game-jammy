@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bsuiw8if7pxgy"
+path="res://.godot/imported/jump.wav-e74ee9c8ab4123e4f25f725ebc6323c9.sample"
+
+[deps]
+
+source_file="res://audio/brackey audio/jump.wav"
+dest_files=["res://.godot/imported/jump.wav-e74ee9c8ab4123e4f25f725ebc6323c9.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://8l44yfy028xe"
+path="res://.godot/imported/148795__splicesound__footsteps-solid-wood-female-barefoot-running.wav-0b4f28c7dd59168e6691e39fea49cb6a.sample"
+
+[deps]
+
+source_file="res://audio/brackey audio/148795__splicesound__footsteps-solid-wood-female-barefoot-running.wav"
+dest_files=["res://.godot/imported/148795__splicesound__footsteps-solid-wood-female-barefoot-running.wav-0b4f28c7dd59168e6691e39fea49cb6a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

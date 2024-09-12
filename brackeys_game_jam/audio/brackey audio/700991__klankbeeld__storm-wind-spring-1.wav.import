@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://h6dx7u1wif7s"
+path="res://.godot/imported/700991__klankbeeld__storm-wind-spring-1.wav-d28787b4338a071def266a28c6088b1a.sample"
+
+[deps]
+
+source_file="res://audio/brackey audio/700991__klankbeeld__storm-wind-spring-1.wav"
+dest_files=["res://.godot/imported/700991__klankbeeld__storm-wind-spring-1.wav-d28787b4338a071def266a28c6088b1a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://ce5sxxm6magvs"]
+[gd_scene load_steps=6 format=3 uid="uid://ce5sxxm6magvs"]
 
 [ext_resource type="Texture2D" uid="uid://bech1nkng6yty" path="res://assets/Asset Packs/Oak Woods Enviremental Pack/decorations/spike.png" id="1_moo5y"]
 [ext_resource type="PackedScene" uid="uid://c0srdht8yfyjy" path="res://scenes/killzone.tscn" id="2_vlqfq"]
+[ext_resource type="AudioStream" uid="uid://cmn7u0q00kagp" path="res://audio/brackey audio/death.wav" id="3_vr7he"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6kb75"]
 size = Vector2(14, 6)
@@ -28,3 +29,6 @@ shape = SubResource("RectangleShape2D_2lw6e")
 texture_filter = 1
 position = Vector2(0, -8)
 texture = ExtResource("1_moo5y")
+
+[node name="death_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_vr7he")

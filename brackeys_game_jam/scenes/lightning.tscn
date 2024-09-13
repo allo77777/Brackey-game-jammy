@@ -1,0 +1,82 @@
+[gd_scene load_steps=12 format=3 uid="uid://cd26t31kwfe63"]
+
+[ext_resource type="Texture2D" uid="uid://dvifbu2c26w8k" path="res://assets/Asset Packs/Cloud Pixel Art Pack/Lightning/lightning2.png" id="1_3pnct"]
+[ext_resource type="Script" path="res://scripts/lightning.gd" id="1_x43j7"]
+[ext_resource type="PackedScene" uid="uid://b0tswlr7150a2" path="res://scenes/warning_sprite.tscn" id="2_vgbps"]
+[ext_resource type="Texture2D" uid="uid://bav605qkujmm5" path="res://assets/Asset Packs/Cloud Pixel Art Pack/Lightning/lightning3.png" id="2_vvmgd"]
+[ext_resource type="Texture2D" uid="uid://pa1n65a5nbqs" path="res://assets/Asset Packs/Cloud Pixel Art Pack/Lightning/lightning5.png" id="4_sl68o"]
+[ext_resource type="Texture2D" uid="uid://b7l6leqdmr5t6" path="res://assets/Asset Packs/Cloud Pixel Art Pack/Lightning/lightning1.png" id="5_g8mvj"]
+[ext_resource type="PackedScene" uid="uid://c0srdht8yfyjy" path="res://scenes/killzone.tscn" id="7_md4vh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v6jm6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3pnct")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_vvmgd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_sl68o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_g8mvj")
+}],
+"loop": false,
+"name": &"default",
+"speed": 20.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2isql"]
+size = Vector2(29, 162)
+
+[sub_resource type="Gradient" id="Gradient_7lisy"]
+colors = PackedColorArray(1, 0.982514, 0.821758, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_sd5au"]
+gradient = SubResource("Gradient_7lisy")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.816, 0.2)
+
+[node name="Lightning" type="Node2D"]
+z_index = 10
+script = ExtResource("1_x43j7")
+
+[node name="WarningSprite" parent="." instance=ExtResource("2_vgbps")]
+
+[node name="LightningSprite" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_v6jm6")
+frame = 3
+frame_progress = 1.0
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="SoundTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="DelayTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="Killzone" parent="." instance=ExtResource("7_md4vh")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(0, 16)
+shape = SubResource("RectangleShape2D_2isql")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0.499998, -83.5)
+scale = Vector2(1.20313, 5.92188)
+texture = SubResource("GradientTexture2D_sd5au")
+
+[connection signal="animation_finished" from="LightningSprite" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="SoundTimer" to="." method="_on_sound_timer_timeout"]
+[connection signal="timeout" from="DelayTimer" to="." method="_on_delay_timer_timeout"]

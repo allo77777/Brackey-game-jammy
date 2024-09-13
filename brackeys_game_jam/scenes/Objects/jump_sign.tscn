@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_mlrca"]
 radius = 15.4029
 
-[node name="Sign" type="Sprite2D"]
+[node name="JumpSign" type="Sprite2D"]
 texture_filter = 1
 position = Vector2(105, -15.5)
 texture = ExtResource("1_qx118")

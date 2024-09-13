@@ -64,6 +64,7 @@ collision_mask = 0
 script = ExtResource("1_dex00")
 
 [node name="Artifact" type="Sprite2D" parent="."]
+self_modulate = Color(0.238302, 0.000457146, 0.613992, 1)
 texture_filter = 1
 position = Vector2(0, -16)
 texture = ExtResource("1_q3gl3")

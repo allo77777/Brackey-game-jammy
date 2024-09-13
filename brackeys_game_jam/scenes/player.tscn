@@ -162,7 +162,8 @@ size = Vector2(9, 31)
 radius = 20.0998
 
 [sub_resource type="LabelSettings" id="LabelSettings_tpymy"]
-font_size = 7
+font_size = 8
+font_color = Color(1, 0, 0, 1)
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 4

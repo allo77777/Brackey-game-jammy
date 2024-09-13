@@ -3,7 +3,7 @@ class_name Player
 
 #Player movement
 @export_category("Movement")
-@export var SPEED: float = 220
+@export var SPEED: float = 220.0
 @export var JUMP_VELOCITY: float = -500.0
 
 @export_category("References")
@@ -30,7 +30,6 @@ var direction: float
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity", 980)
 var prevVelocity: Vector2
 var all_interactions: Array = []
-
 
 func _ready() -> void:
 	update_interaction()

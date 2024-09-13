@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cd26t31kwfe63"]
+[gd_scene load_steps=13 format=3 uid="uid://cd26t31kwfe63"]
 
 [ext_resource type="Texture2D" uid="uid://dvifbu2c26w8k" path="res://assets/Asset Packs/Cloud Pixel Art Pack/Lightning/lightning2.png" id="1_3pnct"]
 [ext_resource type="Script" path="res://scripts/lightning.gd" id="1_x43j7"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://pa1n65a5nbqs" path="res://assets/Asset Packs/Cloud Pixel Art Pack/Lightning/lightning5.png" id="4_sl68o"]
 [ext_resource type="Texture2D" uid="uid://b7l6leqdmr5t6" path="res://assets/Asset Packs/Cloud Pixel Art Pack/Lightning/lightning1.png" id="5_g8mvj"]
 [ext_resource type="PackedScene" uid="uid://c0srdht8yfyjy" path="res://scenes/killzone.tscn" id="7_md4vh"]
+[ext_resource type="AudioStream" uid="uid://cuuejytpw3k1d" path="res://audio/brackey audio/boom.wav" id="8_ih5hr"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_v6jm6"]
 animations = [{
@@ -70,6 +71,8 @@ position = Vector2(0, 16)
 shape = SubResource("RectangleShape2D_2isql")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_ih5hr")
+volume_db = 24.0
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(0.499998, -83.5)

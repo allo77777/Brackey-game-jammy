@@ -1237,9 +1237,11 @@ position = Vector2(1129, -72)
 position = Vector2(1144, -72)
 
 [node name="Spike9" parent="Objects/Spikes" instance=ExtResource("5_txoaj")]
+modulate = Color(0, 0, 0, 1)
 position = Vector2(1237, -120)
 
 [node name="Spike10" parent="Objects/Spikes" instance=ExtResource("5_txoaj")]
+modulate = Color(0.103744, 0.103744, 0.103744, 1)
 position = Vector2(1252, -120)
 
 [node name="Rocks" type="Node2D" parent="Objects"]
@@ -1467,12 +1469,15 @@ position = Vector2(1036, -34)
 position = Vector2(1194, -34)
 
 [node name="MediumGrass11" parent="Objects/Grass" instance=ExtResource("9_itknf")]
+visible = false
 position = Vector2(1266, -114.5)
 
 [node name="SmallGrass12" parent="Objects/Grass" instance=ExtResource("8_r4a4r")]
+visible = false
 position = Vector2(1258, -113.5)
 
 [node name="LargeGrass15" parent="Objects/Grass" instance=ExtResource("10_77sst")]
+visible = false
 position = Vector2(1228, -114)
 
 [node name="MediumGrass12" parent="Objects/Grass" instance=ExtResource("9_itknf")]

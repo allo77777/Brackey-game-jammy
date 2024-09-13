@@ -23,7 +23,8 @@ class_name Player
 @onready var rain: ColorRect = $"../Rain"
 #those play sounds 
 @onready var jump_sfx = $jump_sound
-
+#this is the delay death animation
+@onready var dot_anim = %dot_anim
 #Variables
 var facing: int
 var direction: float
@@ -31,13 +32,14 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity", 980)
 var prevVelocity: Vector2
 var all_interactions: Array = []
 
+
 func _ready() -> void:
 	update_interaction()
 	calm_particles.show()
 	storm_particles.hide()
 	storm_fog.hide()
 	rain.hide()
-
+	dot_anim.visible = false
 func _physics_process(delta: float) -> void:	
 	
 	facing_direction()

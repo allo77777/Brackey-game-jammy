@@ -10,10 +10,11 @@ config_version=5
 
 [application]
 
-config/name="storm game"
+config/name="storm woods"
 run/main_scene="res://scenes/menu_scenes/main_menu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0.894922, 0.894922, 0.894922, 1)
+config/icon="res://assets/ball2.png"
 
 [input]
 

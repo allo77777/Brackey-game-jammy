@@ -9,6 +9,8 @@ func _ready() -> void:
 	timer.wait_time = death_time
 
 func _on_body_entered(_body: Node2D) -> void:
+	death_sfx.play()
+	await death_sfx.finished
 	timer.start()
 
 func _on_timer_timeout() -> void:

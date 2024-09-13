@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=4 uid="uid://q7hs8vmm8mg1"]
+[gd_scene load_steps=47 format=4 uid="uid://q7hs8vmm8mg1"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_b7uvj"]
 [ext_resource type="PackedScene" uid="uid://cd26t31kwfe63" path="res://scenes/lightning.tscn" id="2_2pojg"]
@@ -26,6 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://c0srdht8yfyjy" path="res://scenes/killzone.tscn" id="19_842xf"]
 [ext_resource type="PackedScene" uid="uid://b0tswlr7150a2" path="res://scenes/warning_sprite.tscn" id="20_hss00"]
 [ext_resource type="Shader" path="res://assets/Asset Packs/Rain And Snow Pack/rain_and_snow_shader.gdshader" id="24_e3hv6"]
+[ext_resource type="AudioStream" uid="uid://bpe88xrnq21rb" path="res://audio/brackey audio/alex-productions-tension.mp3" id="27_dwck8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2rhqy"]
 shader = ExtResource("24_e3hv6")
@@ -1639,3 +1640,7 @@ polygon = PackedVector2Array(-43, 90, -31, 64, -25, 13, -23, -19, -104, -72, 3, 
 [node name="main_menu" parent="." instance=ExtResource("10_v2cfh")]
 offset_top = 600.0
 offset_bottom = 600.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("27_dwck8")
+autoplay = true

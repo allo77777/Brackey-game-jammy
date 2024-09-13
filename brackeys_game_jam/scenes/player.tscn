@@ -1,8 +1,7 @@
-[gd_scene load_steps=32 format=3 uid="uid://dj63f22jbpg1d"]
+[gd_scene load_steps=27 format=3 uid="uid://dj63f22jbpg1d"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_twxap"]
 [ext_resource type="Texture2D" uid="uid://c5sgoxmkrts3i" path="res://assets/Asset Packs/Pixel Adventurer Pack/adventurer-Sheet.png" id="2_2qjmw"]
-[ext_resource type="Texture2D" uid="uid://bhhvy0iwkt1jc" path="res://assets/dotsv2.png" id="4_3s086"]
 [ext_resource type="AudioStream" uid="uid://bsuiw8if7pxgy" path="res://audio/brackey audio/jump.wav" id="4_xwqgk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h3ngg"]
@@ -166,35 +165,6 @@ radius = 20.0998
 font_size = 8
 font_color = Color(1, 0, 0, 1)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_lknhg"]
-atlas = ExtResource("4_3s086")
-region = Rect2(0, 0, 100, 50)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7x1bw"]
-atlas = ExtResource("4_3s086")
-region = Rect2(100, 0, 100, 50)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_u7ubl"]
-atlas = ExtResource("4_3s086")
-region = Rect2(200, 0, 100, 50)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_p6umh"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lknhg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7x1bw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_u7ubl")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
 [node name="Player" type="CharacterBody2D"]
 z_index = 4
 script = ExtResource("1_twxap")
@@ -244,27 +214,6 @@ one_shot = true
 [node name="jump_sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_xwqgk")
 bus = &"sfx"
-
-[node name="hud" type="CanvasLayer" parent="."]
-
-[node name="Control" type="Control" parent="hud"]
-layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="dot_anim" type="AnimatedSprite2D" parent="hud/Control"]
-unique_name_in_owner = true
-position = Vector2(5.455, 0)
-sprite_frames = SubResource("SpriteFrames_p6umh")
-autoplay = "default"
-frame_progress = 0.629047
 
 [connection signal="area_entered" from="Interactions/InteractionArea" to="." method="_on_interaction_area_area_entered"]
 [connection signal="area_exited" from="Interactions/InteractionArea" to="." method="_on_interaction_area_area_exited"]

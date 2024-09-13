@@ -24,7 +24,7 @@ class_name Player
 #those play sounds 
 @onready var jump_sfx = $jump_sound
 #this is the delay death animation
-@onready var dot_anim = %dot_anim
+
 #Variables
 var facing: int
 var direction: float
@@ -39,7 +39,7 @@ func _ready() -> void:
 	storm_particles.hide()
 	storm_fog.hide()
 	rain.hide()
-	dot_anim.visible = false
+	
 func _physics_process(delta: float) -> void:	
 	
 	facing_direction()

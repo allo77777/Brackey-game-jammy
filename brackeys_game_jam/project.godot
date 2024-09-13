@@ -13,7 +13,6 @@ config_version=5
 config/name="storm woods"
 run/main_scene="res://scenes/menu_scenes/main_menu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
-boot_splash/bg_color=Color(0.894922, 0.894922, 0.894922, 1)
 config/icon="res://assets/ball2.png"
 
 [input]

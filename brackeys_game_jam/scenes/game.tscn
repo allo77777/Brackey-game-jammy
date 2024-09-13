@@ -1,6 +1,7 @@
-[gd_scene load_steps=44 format=4 uid="uid://q7hs8vmm8mg1"]
+[gd_scene load_steps=46 format=4 uid="uid://q7hs8vmm8mg1"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_b7uvj"]
+[ext_resource type="PackedScene" uid="uid://cd26t31kwfe63" path="res://scenes/lightning.tscn" id="2_2pojg"]
 [ext_resource type="PackedScene" uid="uid://dj63f22jbpg1d" path="res://scenes/player.tscn" id="2_li5gt"]
 [ext_resource type="Texture2D" uid="uid://c5r8ia64xbyg7" path="res://assets/Asset Packs/Oak Woods Enviremental Pack/oak_woods_tileset.png" id="2_lp0xe"]
 [ext_resource type="Texture2D" uid="uid://cxpobxohc7oro" path="res://assets/Texture/Light/game.tres" id="4_wxw1h"]
@@ -17,12 +18,13 @@
 [ext_resource type="PackedScene" uid="uid://c6ceusqk5om8u" path="res://scenes/Objects/large_grass.tscn" id="10_77sst"]
 [ext_resource type="PackedScene" uid="uid://cgog0khyga5jc" path="res://scenes/menu_scenes/main_menu.tscn" id="10_v2cfh"]
 [ext_resource type="Texture2D" uid="uid://6jcpfyh04bb2" path="res://assets/Asset Packs/Oak Woods Enviremental Pack/decorations/Tree.png" id="11_ohd2n"]
-[ext_resource type="PackedScene" uid="uid://dytrpk3wctdt" path="res://scenes/Objects/sign.tscn" id="12_ijb8r"]
+[ext_resource type="PackedScene" uid="uid://dytrpk3wctdt" path="res://scenes/Objects/jump_sign.tscn" id="12_ijb8r"]
 [ext_resource type="PackedScene" uid="uid://cxc6opvgpms5n" path="res://scenes/Objects/fallen_tree.tscn" id="14_rvgpd"]
 [ext_resource type="PackedScene" uid="uid://hj2cuxu8yojd" path="res://scenes/tempest_pedestral.tscn" id="15_n3csu"]
 [ext_resource type="Texture2D" uid="uid://d3lcn88fgls5w" path="res://assets/Asset Packs/Oak Woods Enviremental Pack/decorations/fence_1.png" id="16_6f78h"]
+[ext_resource type="PackedScene" uid="uid://duj18jv378sx" path="res://scenes/Objects/warning_sign.tscn" id="16_xofi6"]
 [ext_resource type="PackedScene" uid="uid://c0srdht8yfyjy" path="res://scenes/killzone.tscn" id="19_842xf"]
-[ext_resource type="Texture2D" uid="uid://bhrxpvv5mos0d" path="res://assets/Asset Packs/Oak Woods Enviremental Pack/decorations/sign.png" id="23_b11tj"]
+[ext_resource type="PackedScene" uid="uid://b0tswlr7150a2" path="res://scenes/warning_sprite.tscn" id="20_hss00"]
 [ext_resource type="Shader" path="res://assets/Asset Packs/Rain And Snow Pack/rain_and_snow_shader.gdshader" id="24_e3hv6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2rhqy"]
@@ -1121,10 +1123,15 @@ visible = false
 z_index = 5
 material = SubResource("ShaderMaterial_2rhqy")
 offset_left = -496.0
-offset_top = -263.0
+offset_top = -315.0
 offset_right = 2000.0
 offset_bottom = 88.0
 color = Color(1, 1, 1, 0)
+
+[node name="Lightning" parent="." node_paths=PackedStringArray("game", "player") instance=ExtResource("2_2pojg")]
+position = Vector2(0, -80)
+game = NodePath("..")
+player = NodePath("../Player")
 
 [node name="TileMap" type="Node2D" parent="."]
 
@@ -1492,14 +1499,10 @@ position = Vector2(1594, -60.5)
 [node name="Lamp3" parent="Objects" instance=ExtResource("6_vfp23")]
 position = Vector2(684, -93)
 
-[node name="Sign" parent="Objects" instance=ExtResource("12_ijb8r")]
+[node name="JumpSign" parent="Objects" instance=ExtResource("12_ijb8r")]
 
-[node name="Sign2" type="Sprite2D" parent="Objects"]
-texture_filter = 1
+[node name="WarningSign" parent="Objects" instance=ExtResource("16_xofi6")]
 position = Vector2(600, -79)
-rotation = 3.14159
-scale = Vector2(1, -1)
-texture = ExtResource("23_b11tj")
 
 [node name="Fence1" type="Sprite2D" parent="Objects"]
 texture_filter = 1
@@ -1513,6 +1516,15 @@ rotation = 0.436332
 [node name="TempestPedestral" parent="Objects" node_paths=PackedStringArray("game") instance=ExtResource("15_n3csu")]
 position = Vector2(1528, -40)
 game = NodePath("../..")
+
+[node name="WarningSprite" parent="Objects" instance=ExtResource("20_hss00")]
+position = Vector2(642, -128)
+
+[node name="WarningSprite2" parent="Objects" instance=ExtResource("20_hss00")]
+position = Vector2(1138, -131)
+
+[node name="WarningSprite3" parent="Objects" instance=ExtResource("20_hss00")]
+position = Vector2(1245, -165)
 
 [node name="ParallaxBackground" type="Node2D" parent="."]
 z_index = -1

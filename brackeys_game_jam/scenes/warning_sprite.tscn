@@ -1,0 +1,88 @@
+[gd_scene load_steps=13 format=3 uid="uid://b0tswlr7150a2"]
+
+[ext_resource type="Texture2D" uid="uid://cxr7lf21rpdfj" path="res://assets/Asset Packs/Red Exclamation Warnign Pack/Warning.png" id="1_iv6ly"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bp05o"]
+atlas = ExtResource("1_iv6ly")
+region = Rect2(0, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_66euv"]
+atlas = ExtResource("1_iv6ly")
+region = Rect2(1024, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uhk5n"]
+atlas = ExtResource("1_iv6ly")
+region = Rect2(2048, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pmvq4"]
+atlas = ExtResource("1_iv6ly")
+region = Rect2(3072, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lub0u"]
+atlas = ExtResource("1_iv6ly")
+region = Rect2(4096, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x15hp"]
+atlas = ExtResource("1_iv6ly")
+region = Rect2(5120, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l5tbe"]
+atlas = ExtResource("1_iv6ly")
+region = Rect2(6144, 0, 1024, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6re4b"]
+atlas = ExtResource("1_iv6ly")
+region = Rect2(7168, 0, 1024, 1024)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p68sm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bp05o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_66euv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uhk5n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pmvq4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lub0u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x15hp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l5tbe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6re4b")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_tkx58"]
+colors = PackedColorArray(1, 1, 1, 0.729412, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4irfv"]
+gradient = SubResource("Gradient_tkx58")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.837607, 0.179487)
+
+[node name="WarningSprite" type="Node2D"]
+z_index = 5
+
+[node name="WarningSprite" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.03, 0.03)
+sprite_frames = SubResource("SpriteFrames_p68sm")
+autoplay = "default"
+frame_progress = 0.225371
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+texture = SubResource("GradientTexture2D_4irfv")

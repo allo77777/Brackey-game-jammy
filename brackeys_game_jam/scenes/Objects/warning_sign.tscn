@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://duj18jv378sx"]
+
+[ext_resource type="Texture2D" uid="uid://bhrxpvv5mos0d" path="res://assets/Asset Packs/Oak Woods Enviremental Pack/decorations/sign.png" id="1_hoqw2"]
+[ext_resource type="PackedScene" uid="uid://bqs1lj6pn18bi" path="res://scenes/interaction_area.tscn" id="2_cijk1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mlrca"]
+radius = 15.4029
+
+[node name="WarningSign" type="Sprite2D"]
+texture_filter = 1
+position = Vector2(105, -15.5)
+texture = ExtResource("1_hoqw2")
+
+[node name="InteractionArea" parent="." instance=ExtResource("2_cijk1")]
+collision_layer = 2
+collision_mask = 0
+monitoring = false
+interact_label = "Warning Signs Indicate Danger, Be Careful"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("CircleShape2D_mlrca")

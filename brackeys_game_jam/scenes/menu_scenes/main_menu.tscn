@@ -19,21 +19,21 @@ shadow_color = Color(0.799291, 0.565976, 3.85046e-07, 0.6)
 shadow_size = 15
 shadow_offset = Vector2(10, 5)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5tpoi"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dnw1t"]
 texture = ExtResource("1_ht1dk")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y6trv"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oid4v"]
 texture = ExtResource("1_ht1dk")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_shb4a"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qticw"]
 bg_color = Color(0.621441, 0.530818, 0.890534, 0.443137)
 shadow_color = Color(0.145098, 0.152941, 0.6, 0.6)
 shadow_size = 10
 
 [sub_resource type="Theme" id="Theme_18mms"]
-Button/styles/hover = SubResource("StyleBoxTexture_5tpoi")
-Button/styles/normal = SubResource("StyleBoxTexture_y6trv")
-Button/styles/pressed = SubResource("StyleBoxFlat_shb4a")
+Button/styles/hover = SubResource("StyleBoxTexture_dnw1t")
+Button/styles/normal = SubResource("StyleBoxTexture_oid4v")
+Button/styles/pressed = SubResource("StyleBoxFlat_qticw")
 
 [node name="main_menu" type="Control"]
 layout_mode = 3

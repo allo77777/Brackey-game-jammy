@@ -1,9 +1,10 @@
 extends CharacterBody2D
 class_name Player
 
+
 #Player movement
 @export_category("Movement")
-@export var SPEED: float = 220.0
+@export var SPEED: float = 200.0
 @export var JUMP_VELOCITY: float = -500.0
 
 @export_category("References")
@@ -40,6 +41,7 @@ func _ready() -> void:
 	storm_particles.hide()
 	storm_fog.hide()
 	rain.hide()
+	add_to_group("game")
 	
 func quit_to_menu():
 	if Input.is_action_just_pressed("esc"):

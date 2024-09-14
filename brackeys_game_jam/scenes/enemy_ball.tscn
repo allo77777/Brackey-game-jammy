@@ -40,21 +40,20 @@ radius = 49.0102
 radius = 102.02
 
 [node name="enemy_ball" type="CharacterBody2D"]
+motion_mode = 1
 script = ExtResource("1_meu6a")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_gqgl1")
 autoplay = "default"
-frame_progress = 0.736571
+frame_progress = 0.618501
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource("CircleShape2D_h8lre")
 debug_color = Color(0.447271, 0.451342, 1, 0.42)
 
 [node name="Killzone" parent="." instance=ExtResource("3_ic0nw")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
-visible = false
 shape = SubResource("CircleShape2D_xo8oc")
 debug_color = Color(0.939678, 0.216034, 0.308812, 0.42)

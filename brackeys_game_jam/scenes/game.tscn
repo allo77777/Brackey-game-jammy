@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=4 uid="uid://q7hs8vmm8mg1"]
+[gd_scene load_steps=48 format=4 uid="uid://q7hs8vmm8mg1"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_b7uvj"]
 [ext_resource type="PackedScene" uid="uid://cd26t31kwfe63" path="res://scenes/lightning.tscn" id="2_2pojg"]
@@ -27,6 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://b0tswlr7150a2" path="res://scenes/warning_sprite.tscn" id="20_hss00"]
 [ext_resource type="Shader" path="res://assets/Asset Packs/Rain And Snow Pack/rain_and_snow_shader.gdshader" id="24_e3hv6"]
 [ext_resource type="AudioStream" uid="uid://bpe88xrnq21rb" path="res://audio/brackey audio/alex-productions-tension.mp3" id="27_dwck8"]
+[ext_resource type="AudioStream" uid="uid://h6dx7u1wif7s" path="res://audio/brackey audio/700991__klankbeeld__storm-wind-spring-1.wav" id="28_7u4wl"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2rhqy"]
 shader = ExtResource("24_e3hv6")
@@ -1176,6 +1177,11 @@ visible = false
 amount = 20
 process_material = SubResource("ParticleProcessMaterial_uh0nb")
 
+[node name="music_2" type="AudioStreamPlayer2D" parent="Player"]
+position = Vector2(0, 20)
+stream = ExtResource("28_7u4wl")
+volume_db = 10.0
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_qm6ey")
 
@@ -1641,6 +1647,6 @@ polygon = PackedVector2Array(-43, 90, -31, 64, -25, 13, -23, -19, -104, -72, 3, 
 offset_top = 600.0
 offset_bottom = 600.0
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="music_1" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("27_dwck8")
 autoplay = true

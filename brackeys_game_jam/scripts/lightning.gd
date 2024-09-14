@@ -58,7 +58,7 @@ func _on_delay_timer_timeout() -> void:
 		#playtester huge W didn't liked delay so removed it 
 		#SFX
 
-		sound_timer.wait_time = abs(global_position.x) / 100
+		sound_timer.wait_time = 0.1
 		sound_timer.start()
 		
 #Plays the thunder sound after a random time

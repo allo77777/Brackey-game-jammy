@@ -57,6 +57,7 @@ frame_progress = 1.0
 autostart = true
 
 [node name="SoundTimer" type="Timer" parent="."]
+one_shot = true
 
 [node name="DelayTimer" type="Timer" parent="."]
 wait_time = 2.0

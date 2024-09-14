@@ -59,12 +59,11 @@ func _on_delay_timer_timeout() -> void:
 		#SFX
 
 		sound_timer.wait_time = abs(global_position.x) / 100
-
 		sound_timer.start()
 		
 #Plays the thunder sound after a random time
 func _on_sound_timer_timeout() -> void:
-	pass
+	print("thunder")
 	audio_stream_player_2d.play()
 	# ^^^^^^^^^^^^^^^^^^^^^^^^^
 	#Add audio to audio stream player and uncomment the above line

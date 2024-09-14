@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=4 uid="uid://q7hs8vmm8mg1"]
+[gd_scene load_steps=49 format=4 uid="uid://q7hs8vmm8mg1"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_b7uvj"]
 [ext_resource type="PackedScene" uid="uid://cd26t31kwfe63" path="res://scenes/lightning.tscn" id="2_2pojg"]
@@ -16,7 +16,6 @@
 [ext_resource type="PackedScene" uid="uid://bju1c4v4wmotk" path="res://scenes/Objects/medium_grass.tscn" id="9_itknf"]
 [ext_resource type="Texture2D" uid="uid://bsqelpeu8b5vu" path="res://assets/Asset Packs/Oak Woods Enviremental Pack/background/background_layer_3.png" id="9_lawbd"]
 [ext_resource type="PackedScene" uid="uid://c6ceusqk5om8u" path="res://scenes/Objects/large_grass.tscn" id="10_77sst"]
-[ext_resource type="PackedScene" uid="uid://cgog0khyga5jc" path="res://scenes/menu_scenes/main_menu.tscn" id="10_v2cfh"]
 [ext_resource type="Texture2D" uid="uid://6jcpfyh04bb2" path="res://assets/Asset Packs/Oak Woods Enviremental Pack/decorations/Tree.png" id="11_ohd2n"]
 [ext_resource type="PackedScene" uid="uid://dytrpk3wctdt" path="res://scenes/Objects/jump_sign.tscn" id="12_ijb8r"]
 [ext_resource type="PackedScene" uid="uid://cxc6opvgpms5n" path="res://scenes/Objects/fallen_tree.tscn" id="14_rvgpd"]
@@ -1149,7 +1148,7 @@ storm_fog = NodePath("../Fog/StormFog")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 offset = Vector2(0, -20)
-zoom = Vector2(3, 3)
+zoom = Vector2(4, 4)
 limit_left = -300
 limit_right = 1700
 limit_bottom = 100
@@ -1249,11 +1248,9 @@ position = Vector2(1129, -72)
 position = Vector2(1144, -72)
 
 [node name="Spike9" parent="Objects/Spikes" instance=ExtResource("5_txoaj")]
-modulate = Color(0, 0, 0, 1)
 position = Vector2(1237, -120)
 
 [node name="Spike10" parent="Objects/Spikes" instance=ExtResource("5_txoaj")]
-modulate = Color(0.103744, 0.103744, 0.103744, 1)
 position = Vector2(1252, -120)
 
 [node name="Rocks" type="Node2D" parent="Objects"]
@@ -1648,16 +1645,12 @@ collision_mask = 0
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="WorldBounds/RightLimit/StaticBody2D"]
 polygon = PackedVector2Array(-43, 90, -31, 64, -25, 13, -23, -19, -104, -72, 3, -71, 2, 90)
 
-[node name="main_menu" parent="." instance=ExtResource("10_v2cfh")]
-offset_top = 600.0
-offset_bottom = 600.0
-
 [node name="music_1" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("27_dwck8")
 autoplay = true
 
 [node name="end_goal" type="Area2D" parent="."]
-position = Vector2(-134, -67)
+position = Vector2(-10, -61)
 script = ExtResource("29_b8eab")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="end_goal"]

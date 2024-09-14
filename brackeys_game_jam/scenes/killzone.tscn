@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c0srdht8yfyjy"]
 
 [ext_resource type="Script" path="res://scripts/killzone.gd" id="1_t11ti"]
-[ext_resource type="AudioStream" uid="uid://cmn7u0q00kagp" path="res://audio/brackey audio/death.wav" id="2_36d0v"]
+[ext_resource type="AudioStream" uid="uid://cmn7u0q00kagp" path="res://audio/brackey audio/death.wav" id="2_jgpnd"]
 
 [node name="Killzone" type="Area2D"]
 collision_layer = 0
@@ -12,7 +12,7 @@ script = ExtResource("1_t11ti")
 one_shot = true
 
 [node name="death_sound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_36d0v")
+stream = ExtResource("2_jgpnd")
 bus = &"sfx"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

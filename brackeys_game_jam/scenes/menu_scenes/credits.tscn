@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dxi2j8uhq2mgu"]
+[gd_scene load_steps=8 format=3 uid="uid://dxi2j8uhq2mgu"]
 
 [ext_resource type="Script" path="res://scripts/menu_scripts/credits.gd" id="1_8jpak"]
 [ext_resource type="Texture2D" uid="uid://pb80txk3ejbn" path="res://assets/UI/button_green_purple.png" id="1_a2yl6"]
+[ext_resource type="Texture2D" uid="uid://cy5sfut2ht6ea" path="res://assets/CREDIT_BG_STORM.png" id="2_hjkhr"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qhes5"]
 texture = ExtResource("1_a2yl6")
@@ -28,14 +29,14 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8jpak")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.513233, 0.513233, 0.513233, 1)
+texture = ExtResource("2_hjkhr")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ColorRect"]
 layout_mode = 1
@@ -50,7 +51,9 @@ metadata/_edit_use_anchors_ = true
 [node name="label" type="Label" parent="ColorRect/HBoxContainer"]
 layout_mode = 2
 text = "GAME MADE BY
-
+ALLO77
+and
+MATHIS JEAN
 
 
 
@@ -100,6 +103,8 @@ steampunkdemon.itch.io
 
 
 
+
+
 "
 metadata/_edit_use_anchors_ = true
 
@@ -128,6 +133,8 @@ Attribution 4.0
 
 
 
+
+
 "
 metadata/_edit_use_anchors_ = true
 
@@ -136,6 +143,8 @@ layout_mode = 2
 text = "PLAYTESTING
 
 W AL
+
+
 
 
 

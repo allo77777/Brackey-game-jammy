@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://cgog0khyga5jc"]
+[gd_scene load_steps=10 format=3 uid="uid://cgog0khyga5jc"]
 
 [ext_resource type="Texture2D" uid="uid://pb80txk3ejbn" path="res://assets/UI/button_green_purple.png" id="1_ht1dk"]
 [ext_resource type="Script" path="res://scripts/menu_scripts/main_menu.gd" id="1_vctfv"]
 [ext_resource type="Texture2D" uid="uid://bmb1ppg8wfotj" path="res://assets/storm_woods_bg.png" id="2_srwvg"]
+[ext_resource type="AudioStream" uid="uid://d1iu0vmedy3vf" path="res://audio/brackey audio/alex-productions-medieval-and-celtic-music-lands.mp3" id="4_xv433"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_12r27"]
 bg_color = Color(0.257715, 0.238336, 0.748905, 1)
@@ -112,6 +113,11 @@ theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 40
 text = "QUIT
 "
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_xv433")
+autoplay = true
+stream_paused = true
 
 [connection signal="pressed" from="VBoxContainer/play_button" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/credits_button" to="." method="_on_credits_button_pressed"]

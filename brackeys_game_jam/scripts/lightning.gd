@@ -35,7 +35,7 @@ func _on_timer_timeout() -> void:
 	if game.storm:
 		global_position.x = randi_range(lightning_origin.x - 300, lightning_origin.x + 300)
 		global_position.y = lightning_origin.y - 50
-		timer.wait_time = randf_range(0.5, 4)
+		timer.wait_time = randf_range(0.5, 2.5)
 		timer.stop() #Stops the random timer
 		
 		delay_timer.start()	#Starts the delay timer

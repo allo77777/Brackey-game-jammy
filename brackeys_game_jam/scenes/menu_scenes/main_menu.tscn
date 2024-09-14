@@ -1,8 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://cgog0khyga5jc"]
+[gd_scene load_steps=12 format=3 uid="uid://cgog0khyga5jc"]
 
 [ext_resource type="Texture2D" uid="uid://pb80txk3ejbn" path="res://assets/UI/button_green_purple.png" id="1_ht1dk"]
 [ext_resource type="Script" path="res://scripts/menu_scripts/main_menu.gd" id="1_vctfv"]
 [ext_resource type="Texture2D" uid="uid://bmb1ppg8wfotj" path="res://assets/storm_woods_bg.png" id="2_srwvg"]
+[ext_resource type="Texture2D" uid="uid://cmi7os2mhm160" path="res://assets/storm_txt.png" id="3_r3nw3"]
+[ext_resource type="Texture2D" uid="uid://wiuhcbjjlvpu" path="res://assets/wood_txt.png" id="4_qmqg8"]
 [ext_resource type="AudioStream" uid="uid://d1iu0vmedy3vf" path="res://audio/brackey audio/alex-productions-medieval-and-celtic-music-lands.mp3" id="4_xv433"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_12r27"]
@@ -55,6 +57,7 @@ grow_vertical = 2
 texture = ExtResource("2_srwvg")
 
 [node name="Label" type="Label" parent="ColorRect"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.256076
@@ -70,6 +73,29 @@ theme_override_font_sizes/font_size = 66
 theme_override_styles/normal = SubResource("StyleBoxFlat_12r27")
 text = "STORM WOODS"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="TextureRect" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0355903
+anchor_top = 0.845679
+anchor_right = 0.469618
+anchor_bottom = 1.0
+grow_vertical = 0
+texture = ExtResource("3_r3nw3")
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D2" type="TextureRect" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.505208
+anchor_top = 0.845679
+anchor_right = 0.939236
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("4_qmqg8")
 metadata/_edit_use_anchors_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
@@ -115,9 +141,9 @@ text = "QUIT
 "
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(18, 18)
 stream = ExtResource("4_xv433")
 autoplay = true
-stream_paused = true
 
 [connection signal="pressed" from="VBoxContainer/play_button" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/credits_button" to="." method="_on_credits_button_pressed"]

@@ -19,4 +19,5 @@ texture = ExtResource("1_goacb")
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(-6, -6)
 scale = Vector2(1.29688, 1.21875)
+color = Color(0.984314, 0.568627, 0.145098, 1)
 texture = SubResource("GradientTexture2D_0d4q0")

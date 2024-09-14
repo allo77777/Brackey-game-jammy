@@ -55,15 +55,17 @@ func _on_delay_timer_timeout() -> void:
 		
 		#Warning
 		warning_sprite.hide()
-			
+		#playtester huge W didn't liked delay so removed it 
 		#SFX
+
 		sound_timer.wait_time = abs(global_position.x) / 100
+
 		sound_timer.start()
 		
 #Plays the thunder sound after a random time
 func _on_sound_timer_timeout() -> void:
 	pass
-	#audio_stream_player_2d.play()
+	audio_stream_player_2d.play()
 	# ^^^^^^^^^^^^^^^^^^^^^^^^^
 	#Add audio to audio stream player and uncomment the above line
 	#You might have to tweak the code, I never expiremented with sound

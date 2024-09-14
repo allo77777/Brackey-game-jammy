@@ -3,7 +3,7 @@ class_name Player
 
 #Player movement
 @export_category("Movement")
-@export var SPEED: float = 220
+@export var SPEED: float = 220.0
 @export var JUMP_VELOCITY: float = -500.0
 
 @export_category("References")
@@ -23,6 +23,8 @@ class_name Player
 @onready var rain: ColorRect = $"../Rain"
 #those play sounds 
 @onready var jump_sfx = $jump_sound
+@onready var wind_sfx = $music_2
+#this is the delay death animation
 
 #Variables
 var facing: int
@@ -38,8 +40,13 @@ func _ready() -> void:
 	storm_particles.hide()
 	storm_fog.hide()
 	rain.hide()
-
+	
+func quit_to_menu():
+	if Input.is_action_just_pressed("esc"):
+		get_tree().change_scene_to_file("res://scenes/menu_scenes/main_menu.tscn")
+	
 func _physics_process(delta: float) -> void:	
+	quit_to_menu()
 	
 	facing_direction()
 	
@@ -168,3 +175,4 @@ func storm():
 	storm_fog.show()
 	point_light_2d.energy = 0.5
 	rain.show()
+	wind_sfx.play()

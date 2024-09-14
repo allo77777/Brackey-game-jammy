@@ -1,0 +1,60 @@
+[gd_scene load_steps=10 format=3 uid="uid://dad77hn6j6a07"]
+
+[ext_resource type="Script" path="res://scripts/enemy_ball.gd" id="1_meu6a"]
+[ext_resource type="Texture2D" uid="uid://dgt06mkj8kf3x" path="res://assets/sprite_sheet_elec_ball.png" id="2_ud064"]
+[ext_resource type="PackedScene" uid="uid://c0srdht8yfyjy" path="res://scenes/killzone.tscn" id="3_ic0nw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_64yg4"]
+atlas = ExtResource("2_ud064")
+region = Rect2(0, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v2vou"]
+atlas = ExtResource("2_ud064")
+region = Rect2(200, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mpsq0"]
+atlas = ExtResource("2_ud064")
+region = Rect2(400, 0, 200, 200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gqgl1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_64yg4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v2vou")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mpsq0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h8lre"]
+radius = 49.0102
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xo8oc"]
+radius = 102.02
+
+[node name="enemy_ball" type="CharacterBody2D"]
+script = ExtResource("1_meu6a")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_gqgl1")
+autoplay = "default"
+frame_progress = 0.736571
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_h8lre")
+debug_color = Color(0.447271, 0.451342, 1, 0.42)
+
+[node name="Killzone" parent="." instance=ExtResource("3_ic0nw")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+visible = false
+shape = SubResource("CircleShape2D_xo8oc")
+debug_color = Color(0.939678, 0.216034, 0.308812, 0.42)

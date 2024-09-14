@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cuiw0ng3ut56c" path="res://assets/tempest_pedestral.png" id="1_b71ph"]
 [ext_resource type="PackedScene" uid="uid://bqs1lj6pn18bi" path="res://scenes/interaction_area.tscn" id="1_d2kn0"]
 [ext_resource type="Script" path="res://scripts/tempest_pedestral.gd" id="1_dex00"]
-[ext_resource type="Texture2D" uid="uid://sm2dx2jj1y3g" path="res://assets/Artifact.png" id="1_q3gl3"]
+[ext_resource type="Texture2D" uid="uid://b8evpeci31gwv" path="res://assets/ball2.png" id="2_tm3wv"]
 
 [sub_resource type="Animation" id="Animation_l1vho"]
 resource_name = "ArtifactSway"
@@ -66,7 +66,8 @@ script = ExtResource("1_dex00")
 [node name="Artifact" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(0, -16)
-texture = ExtResource("1_q3gl3")
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_tm3wv")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Artifact"]
 libraries = {
@@ -74,6 +75,7 @@ libraries = {
 }
 
 [node name="PointLight2D2" type="PointLight2D" parent="Artifact"]
+color = Color(0.478431, 0.0156863, 0.419608, 1)
 texture = SubResource("GradientTexture2D_al8jh")
 
 [node name="Pedestral" type="Sprite2D" parent="."]

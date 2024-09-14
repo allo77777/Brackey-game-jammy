@@ -1,23 +1,39 @@
-[gd_scene load_steps=7 format=3 uid="uid://cgog0khyga5jc"]
+[gd_scene load_steps=9 format=3 uid="uid://cgog0khyga5jc"]
 
 [ext_resource type="Texture2D" uid="uid://pb80txk3ejbn" path="res://assets/UI/button_green_purple.png" id="1_ht1dk"]
 [ext_resource type="Script" path="res://scripts/menu_scripts/main_menu.gd" id="1_vctfv"]
+[ext_resource type="Texture2D" uid="uid://bmb1ppg8wfotj" path="res://assets/storm_woods_bg.png" id="2_srwvg"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uh486"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_12r27"]
+bg_color = Color(0.257715, 0.238336, 0.748905, 1)
+border_width_left = 30
+border_width_top = 10
+border_width_right = 35
+border_width_bottom = 10
+border_color = Color(0.470588, 0.866667, 0.360784, 1)
+border_blend = true
+corner_radius_top_right = 615
+corner_radius_bottom_left = 425
+expand_margin_left = 10.0
+shadow_color = Color(0.799291, 0.565976, 3.85046e-07, 0.6)
+shadow_size = 15
+shadow_offset = Vector2(10, 5)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5tpoi"]
 texture = ExtResource("1_ht1dk")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rp010"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y6trv"]
 texture = ExtResource("1_ht1dk")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uurp5"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_shb4a"]
 bg_color = Color(0.621441, 0.530818, 0.890534, 0.443137)
 shadow_color = Color(0.145098, 0.152941, 0.6, 0.6)
 shadow_size = 10
 
 [sub_resource type="Theme" id="Theme_18mms"]
-Button/styles/hover = SubResource("StyleBoxTexture_uh486")
-Button/styles/normal = SubResource("StyleBoxTexture_rp010")
-Button/styles/pressed = SubResource("StyleBoxFlat_uurp5")
+Button/styles/hover = SubResource("StyleBoxTexture_5tpoi")
+Button/styles/normal = SubResource("StyleBoxTexture_y6trv")
+Button/styles/pressed = SubResource("StyleBoxFlat_shb4a")
 
 [node name="main_menu" type="Control"]
 layout_mode = 3
@@ -28,22 +44,31 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vctfv")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.446777, 0.446777, 0.446777, 1)
+texture = ExtResource("2_srwvg")
 
 [node name="Label" type="Label" parent="ColorRect"]
-layout_mode = 0
-anchor_left = 0.150174
-anchor_top = 0.0756173
-anchor_right = 0.360243
-anchor_bottom = 0.160494
-text = "Placeholder background"
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.256076
+anchor_top = 0.770062
+anchor_right = 0.743924
+anchor_bottom = 0.941358
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.784314, 0.752941, 0.439216, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0.639216, 1)
+theme_override_constants/outline_size = 25
+theme_override_font_sizes/font_size = 66
+theme_override_styles/normal = SubResource("StyleBoxFlat_12r27")
+text = "STORM WOODS"
+horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]

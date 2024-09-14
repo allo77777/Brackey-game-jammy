@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/menu_scripts/win_menu.gd" id="1_8g5gn"]
 [ext_resource type="Texture2D" uid="uid://pb80txk3ejbn" path="res://assets/UI/button_green_purple.png" id="1_udaug"]
-[ext_resource type="Texture2D" uid="uid://crjiaayu7tlis" path="res://assets/end_screen.png" id="2_dludt"]
+[ext_resource type="Texture2D" uid="uid://cfxg477s42hu0" path="res://assets/end_screen_v2.png" id="2_b65gc"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wtien"]
 texture = ExtResource("1_udaug")
@@ -34,7 +34,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_dludt")
+texture = ExtResource("2_b65gc")
 
 [node name="Label" type="Label" parent="ColorRect"]
 layout_mode = 1

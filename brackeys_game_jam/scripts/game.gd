@@ -8,7 +8,7 @@ extends Node2D
 #References
 @onready var fallen_tree: StaticBody2D = $Objects/FallenTree
 @onready var directional_light_2d: DirectionalLight2D = $Light/DirectionalLight2D
-@onready var music_2 = $music_2
+
 
 
 
